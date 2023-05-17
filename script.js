@@ -63,3 +63,26 @@ $(document).ready(function() {
         }
     });
 });
+
+// function for downloading CV
+
+function downloadFile(filename, content) {
+  var element = document.createElement('a');
+  element.setAttribute('href', 'data:application/pdf;charset=utf-8,' + encodeURIComponent(content));
+  element.setAttribute('download', filename);
+
+  element.style.display = 'none';
+  document.body.appendChild(element);
+
+  element.click();
+
+  document.body.removeChild(element);
+}
+
+var button = document.getElementById('downloadButton');
+button.addEventListener('click', function() {
+  var filename = 'Resume.pdf';
+  var content = '<PDF content goes here>';
+
+  downloadFile(filename, content);
+});
