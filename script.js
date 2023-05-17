@@ -79,7 +79,7 @@ function downloadFile(filename, content) {
   document.body.removeChild(element);
 }
 
-var button = document.getElementById('downloadButton');
+var button = document.getElementById('CV');
 button.addEventListener('click', function() {
   var filename = 'Resume.pdf';
   var content = '<PDF content goes here>';
